@@ -1,0 +1,38 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "linux",
+            "displayName": "linux gcc",
+            "description": "Using compilers: C = gcc",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "linux",
+            "targets": ["all"]
+        },
+        {
+            "name": "ipc_anonymous_pipe",
+            "configurePreset": "linux",
+            "targets": ["ipc_anonymous_pipe"]
+        },
+        {
+            "name": "ipc_named_pipe",
+            "configurePreset": "linux",
+            "targets": ["ipc_named_pipe_sender", "ipc_named_pipe_receiver"]
+        }
+    ]
+}

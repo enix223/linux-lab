@@ -1,0 +1,1 @@
+add_executable(ipc_anonymous_pipe main.c)
