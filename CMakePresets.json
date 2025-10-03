@@ -33,6 +33,11 @@
             "name": "ipc_named_pipe",
             "configurePreset": "linux",
             "targets": ["ipc_named_pipe_sender", "ipc_named_pipe_receiver"]
+        },
+        {
+            "name": "clock",
+            "configurePreset": "linux",
+            "targets": ["clock"]
         }
     ]
 }
