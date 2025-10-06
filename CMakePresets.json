@@ -35,6 +35,11 @@
             "targets": ["ipc_named_pipe_sender", "ipc_named_pipe_receiver"]
         },
         {
+            "name": "cpp_thread",
+            "configurePreset": "linux",
+            "targets": ["cpp_thread_join", "cpp_thread_detach"]
+        },
+        {
             "name": "clock",
             "configurePreset": "linux",
             "targets": ["clock"]
