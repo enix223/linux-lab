@@ -40,6 +40,11 @@
             "targets": ["cpp_thread_join", "cpp_thread_detach"]
         },
         {
+            "name": "fileio",
+            "configurePreset": "linux",
+            "targets": ["copy_sys_invoke"]
+        },
+        {
             "name": "clock",
             "configurePreset": "linux",
             "targets": ["clock"]

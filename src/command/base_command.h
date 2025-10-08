@@ -1,31 +1,36 @@
 #pragma once
 
+#include <string>
+#include <vector>
+
 namespace cl
 {
 class BaseCommand
 {
 public:
-  BaseCommand(int argv, const char *argc[]) : argv_(argv)
+  BaseCommand(int argc, const char *argv[]) : argv_(argc)
   {
-    for (int i = 0; i < argv; i++)
+    for (int i = 0; i < argc; i++)
     {
-      argc_.push_back(argc[i]);
+      argv_.push_back(argv[i]);
     }
   }
 
   std::string &getCommandName()
   {
-    return argc_[0];
+    return argv_[0];
   }
 
   virtual ~BaseCommand()
   {
   }
 
-  virtual void run() = 0;
+  virtual void usage() = 0;
+
+  virtual int run() = 0;
 
 protected:
-  int argv_;
-  std::vector<std::string> argc_;
+  int argc_;
+  std::vector<std::string> argv_;
 };
 } // namespace cl
