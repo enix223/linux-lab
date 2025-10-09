@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -8,12 +9,8 @@ namespace cl
 class BaseCommand
 {
 public:
-  BaseCommand(int argc, const char *argv[]) : argv_(argc)
+  BaseCommand(int argc, const char *argv[]) : argc_(argc), argv_(std::vector<std::string>(argv, argv + argc))
   {
-    for (int i = 0; i < argc; i++)
-    {
-      argv_.push_back(argv[i]);
-    }
   }
 
   std::string &getCommandName()
