@@ -42,7 +42,7 @@
         {
             "name": "fileio",
             "configurePreset": "linux",
-            "targets": ["copy_sys_invoke"]
+            "targets": ["copy_sys_invoke", "copy_with_stdlib"]
         },
         {
             "name": "clock",

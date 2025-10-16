@@ -6,7 +6,6 @@
 #include <fcntl.h>
 #include <format>
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <sys/io.h>
 #include <sys/stat.h>
@@ -25,7 +24,6 @@ public:
     auto &logger = cl::Logger::getInstance();
     if (argc_ != 3)
     {
-      logger.info("argc = ", argc_);
       throw cl::InvalidUsageException();
     }
 
@@ -81,7 +79,6 @@ public:
 
   void usage() override
   {
-    std::stringstream oss;
     std::cerr << std::format("usage: {} <source file> <dest file>\n", getCommandName());
   }
 };
