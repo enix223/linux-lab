@@ -45,6 +45,11 @@
             "targets": ["copy_sys_invoke", "copy_with_stdlib"]
         },
         {
+            "name": "recursive_dir_read",
+            "configurePreset": "linux",
+            "targets": ["recursive_dir_read"]
+        },
+        {
             "name": "clock",
             "configurePreset": "linux",
             "targets": ["clock"]
