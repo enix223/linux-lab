@@ -1,4 +1,4 @@
-.PHONY: build-copy_sys_invoke run-copy_sys_invoke run-copy_with_stdlib
+.PHONY: build-fileio run-copy_sys_invoke run-copy_with_stdlib run-file_link
 ARG ?=
 
 build-fileio:
@@ -9,3 +9,6 @@ run-copy_sys_invoke: build-fileio
 
 run-copy_with_stdlib: build-fileio
 	./out/build/linux/src/fileio/copy_with_stdlib $(ARG)
+
+run-file_link: build-fileio
+	./out/build/linux/src/fileio/file_link $(ARG)

@@ -31,6 +31,24 @@ public:
       logger.error(std::format("failed to unlink file: {}", std::strerror(errno)));
       return -2;
     }
+    std::string msg = "hello world";
+    if (write(fd, msg.c_str(), msg.size()) < 0)
+    {
+      logger.error(std::format("failed to unlink file: {}", std::strerror(errno)));
+      return -3;
+    }
+
+    std::cout << "press any key to continue";
+    getchar();
+
+    close(fd);
+
     return 0;
   }
 };
+
+int main(int argc, const char *argv[])
+{
+  FileLink fileLink(argc, argv);
+  fileLink.run();
+}
