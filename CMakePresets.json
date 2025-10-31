@@ -42,7 +42,7 @@
         {
             "name": "fileio",
             "configurePreset": "linux",
-            "targets": ["copy_sys_invoke", "copy_with_stdlib", "file_link"]
+            "targets": ["copy_sys_invoke", "copy_with_stdlib", "file_link", "dup_file"]
         },
         {
             "name": "recursive_dir_read",
